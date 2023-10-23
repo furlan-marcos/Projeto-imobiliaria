@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+:root {
+    --light-color01: #ffffff;
+    --light-color02: #f6f6f6;
+    --light-color03: #eeeeee;
+    --light-color04: #d9d8d7;
+
+    --dark-color01: #a2b8b3;
+    --dark-color02: #648c85;
+    --dark-color03: #2e5559;
+    --dark-color04: #0f2026;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-color: var(--light-color02);
+}
+
+.content {
+    background-color: var(--light-color01);
+    border-radius: 15px;
+    width: 960px;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    background-color: var(--dark-color02);
+    width: 40%;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+
+    left: 0%;
+}
+
+/* TEXTOS */
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.title-primary, .description-primary {
+    color: var(--light-color01);
+}
+
+.title-second {
+    color: var(--dark-color02);
+}
+
+.description {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+.description-second {
+    color: var(--dark-color03);
+}
+
+
+
+/* BOTÃO -- DA PARA MINIMIZAR O CÓDIGO DOS BOTOES POIS SAO IGUAIS*/
+
+.btn {
+    border-radius: 15px;
+    border: none;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    color: var(--light-color01);
+    font-size: 10px;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color .4s, color .4s;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid var(--light-color01);
+    
+}
+
+.btn-primary:hover {
+    background-color: var(--light-color01);
+    color: var(--dark-color03);
+}
+
+.btn-second {
+    background-color: var(--dark-color02);
+    border: 1px solid var(--dark-color02);
+}
+
+.btn:hover {
+    background-color: var(--light-color01);
+    border: 1px solid var(--dark-color02);
+    color: var(--dark-color02);
+}
+
+
+
+/* PRIMEIRO CONTEUDO*/
+
+.first-content {
+    display: flex;       
+}
+
+.first-content .second-column {
+    z-index: 12;
+}
+
+.first-column {
+    text-align: center;
+    width: 40%;
+    z-index: 10;
+}
+
+.second-column {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media {
+    margin: 1rem 0;
+}
+
+.link-social-media:hover .item-social-media {
+    background-color: var(--dark-color01);
+    color: var(--light-color01);
+    border-color: var(--dark-color01);
+}
+
+.link-social-media:not(:first-child) {
+    margin-left: 10px;
+}
+
+.link-social-media .item-social-media {
+    transition: background-color .4s, color .4s;
+}
+
+.list-social-media {
+    display: flex;
+    list-style-type: none;
+}
+
+.item-social-media {
+    border: 1px solid var(--dark-color01);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: var(--dark-color01);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+
+.form input {
+    height: 45px;
+    width: 100%;
+    border: none;
+    background-color: var(--light-color02);
+    padding-left: 10px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
+    -webkit-text-fill-color: #000 !important;
+}
+
+.label-input {
+    background-color: var(--light-color02);
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.icon-modify {
+    color: var(--dark-color01);
+    padding: 0 5px;
+}
+
+/* SECOND CONTENT */
+
+.second-content {
+    position: absolute;
+    display: flex;
+}
+
+.second-content .first-column {
+    order: 2;
+    z-index: -1;
+}
+
+.second-content .second-column {
+    order: 1;
+    z-index: -1;
+}
+
+.password {
+    color: var(--dark-color03);
+    margin: 15px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.password::first-letter {
+    text-transform: capitalize;
+}
+
+
+
+.sign-in-js .first-content .first-column {
+    z-index: -1;
+}
+
+.sign-in-js .second-content .second-column {
+    z-index: 11;
+}
+.sign-in-js .second-content .first-column {
+    z-index: 13;
+}
+
+.sign-in-js .content::before {
+    left: 60%;
+    border-radius: 0 15px 15px 0;
+    animation: slidein 2s;
+
+    z-index: 12;
+}
+
+.sign-up-js .content::before {
+    animation: slideout 2s;
+
+    z-index: 12;
+}
+
+.sign-up-js .second-content .first-column,
+.sign-up-js .second-content .second-column {
+    z-index: -1;
+}
+
+.sign-up-js .first-content .second-column {
+    z-index: 11;
+}
+
+.sign-up-js .first-content .first-column {
+    z-index: 13;    
+}
+
+/* DESLOCAMENTO CONTEÚDO ATRÁS DO CONTENT:BEFORE*/
+.sign-in-js .first-content .second-column {
+
+    z-index: -1;
+    position: relative;
+    animation: deslocamentoEsq 1s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+}
+
+.sign-up-js .second-content .second-column {
+    position: relative;
+    z-index: -1;
+    animation: deslocamentoDir 1s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+}
+
+/* ANIMAÇÃO CSS PARA O CONTEÚDO */ 
+
+/*ANIMAÇÃOO CSS PARA O CONTEÚDO*/
+
+@keyframes deslocamentoEsq {
+
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+    to {
+        left: -150px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
+@keyframes deslocamentoDir {
+
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+    to {
+        left: 150px;
+        opacity: 0;
+        z-index: -1;
+        
+    }
+}
+
+/*ANIMAÇÃO CSS*/
+
+@keyframes slidein {
+
+    from {
+        left: 0;
+        width: 40%;
+    }
+
+    to {
+        left: 60%;
+        width: 40%;
+    }
+}
+
+@keyframes slideout {
+
+    from {
+        left: 60%;
+        width: 40%;
+    }
+
+    to {
+        left: 0;
+        width: 40%;
+    }
+}
